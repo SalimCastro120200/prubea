@@ -1,0 +1,12 @@
+<div class="w-full">
+    <div class="w-2/3 flex space-x-5 my-5 overflow-y-hidden m-auto">
+        <div
+          color="primary"
+          class="rounded-lg px-5 pt-7 text-center cursor-pointer font-sans font-semibold text-sm text-white bg-[#c23840] tracking-[.25em]"
+          *ngFor="let dist of listaDistribuidores"
+          (click)="isClicked(dist.uuid)">
+          {{ dist.nombre }}
+        </div>
+      </div>
+    <app-slider [childRes]="childRes"></app-slider>
+</div>

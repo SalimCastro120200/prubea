@@ -1,0 +1,27 @@
+<div
+  (click)="counter()"
+  color="primary"
+  class="rounded-full font-sans font-semibold text-center text-sm text-white bg-[#c23840] pb-1 mt-5 cursor-pointer tracking-[.35em]"
+  *ngIf="cantidad == 0"
+  
+>
+  <mat-icon class="pl-1 pt-1">add</mat-icon>
+  AGREGAR AL CARRITO
+</div>
+<div *ngIf="cantidad>= 1" class="pb-1 mt-5 text-center">
+  <span
+    class="rounded-l-full p-2 text-white bg-[#c23840] cursor-pointer"
+    (click)="minus()"
+    color="primary"
+  >
+    <mat-icon class="pl-1 pt-1">remove</mat-icon>
+  </span>
+  <span class="pl-6 pr-6">{{cantidad}}</span>
+  <span
+    class="rounded-r-full p-2 text-white bg-[#c23840] cursor-pointer"
+    (click)="counter()"
+    color="primary"
+  >
+    <mat-icon class="pr-1 pt-1">add</mat-icon>
+  </span>
+</div>

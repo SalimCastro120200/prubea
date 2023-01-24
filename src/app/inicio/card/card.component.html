@@ -1,0 +1,61 @@
+<div class="flex justify-center mx-5">
+  <mat-card
+    class="cardborder drop-shadow-2xl w-[300px] p-5 scale-100 hover:scale-110 duration-500  top-10 my-10"
+    >
+    <img
+    mat-card-image
+    src="https://purepng.com/public/uploads/large/apple-watch-pcq.png"
+      alt="Apple Watch"
+      class="absolute bottom-24 pb-56 hover:scale-110"
+    />
+    <mat-card-content class="fixed top-52">
+      <div class="text-right pr-10">
+        <a
+        class="rounded-full shadow-xl px-1 py-3 font-sans font-semibold text-white bg-[#c23840]"
+        >-{{producto.porcentajeDescuento}}%</a
+        >
+      </div>
+      <mat-card-subtitle class="text-sm">Categoría 6</mat-card-subtitle>
+        <mat-card-title class="font-semibold">
+          {{producto.nombre}}
+          <span class="pl-28">
+          <button>
+            <mat-icon
+              (click)="marcarFavorito(!activo)"
+              *ngIf="!activo"
+              color="primary"
+              >favorite_border</mat-icon
+            >
+            <mat-icon
+              (click)="marcarFavorito(!activo)"
+              *ngIf="activo"
+              color="primary"
+              >favorite</mat-icon
+            >
+          </button>
+        </span>
+      </mat-card-title>
+      <mat-card-title>
+        <span class="text-indigo-500">{{producto.precioOriginal | currency: 'USD'}}</span>
+        &nbsp;&nbsp;&nbsp;
+        <span class="text-sm text-gray-500"><del>{{producto.precioDescuento | currency: 'USD'}}</del></span>
+      </mat-card-title>
+      <a class="text-xs underline underline-offset-auto text-gray-500" href="">
+        Ver Detalles
+      </a>
+  <!-- <app-cantidad-boton *ngFor="let card of childRes" [cantidad]="card"></app-cantidad-boton> -->
+  <app-cantidad-boton [cantidad]="cantidad"></app-cantidad-boton>
+      <div class="text-center text-md pt-5">
+        <span>Oferta finaliza en:</span>&nbsp;
+        <span class="text-[#c23840]"
+          >{{ hours }}:{{ minutes }}:{{ seconds }}</span
+        >
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+ 

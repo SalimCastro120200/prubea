@@ -1,0 +1,16 @@
+<div class="relative overflow-hidden" #main>
+  <div
+    class="w-full flex mb-10 mx-10"
+    [ngStyle]="{ transform: 'translateX(' + i + 'px)' }"
+  >
+    <app-card *ngFor="let card of childRes" [producto]="card"></app-card> <!-- insertar objeto del card -->
+  </div>
+  <div class="absolute flex justify-between left-5 right-5 top-1/2">
+    <div (click)="prevPage()">
+      <mat-icon class="cursor-pointer">navigate_before</mat-icon>
+    </div>
+    <div (click)="nextPage()">
+      <mat-icon class="cursor-pointer">navigate_next</mat-icon>
+    </div>
+  </div>
+</div>
